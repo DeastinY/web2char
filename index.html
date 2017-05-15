@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Chumpy Web2Char</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="jumbotron" style="padding: 2rem 1rem;">
+        <h1 class="display-3">Web2Char</h1>
+        <p >With this tool you can create a *.chumpy file that stores your character. This file is basically a JSON document, that will be the heart of your character. It is compatible with all the tools from Chumpy. For now you can just use it to store your character, but add e.g. git for version control and you already got yourself a tool to manage character development. You can of course also hack your own tools to view, edit and modify your Chumpy character ! Stay tuned for more tools - this is just the most fundamental basis, more will come in the future !</p>
+      </div>
+
+      <form>
+        <h2>Personal Data</h2>
+        <div class="jumbotron" style="padding: 2rem 1rem;">
+          <!-- Player/Character Name -->
+          <div class="form-group row">
+            <label for="inputPlayerName" class="col-sm-2 col-form-label">Player Name</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="inputPlayerName" placeholder="Richard">
+            </div>
+            <label for="inputCharacterName" class="col-sm-2 col-form-label">Character Name</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="inputCharacterName" placeholder="Jack &quot;Jack&quot; Orgalag">
+            </div>
+          </div>
+
+          <!-- Metatype/Ethnicity -->
+          <div class="form-group row">
+            <label for="inputMetatype" class="col-sm-2 col-form-label">Metatype</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="inputMetatype" placeholder="Driad">
+            </div>
+            <label for="inputEthnicity" class="col-sm-2 col-form-label">Ethnicity</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="inputEthnicity" placeholder="American">
+            </div>
+          </div>
+
+          <!-- Age/Sex -->
+          <div class="form-group row">
+            <label for="inputAge" class="col-sm-2 col-form-label">Age</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control" id="inputAge" placeholder="23">
+            </div>
+            <label for="inputSex" class="col-sm-2 col-form-label">Sex</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="inputSex" placeholder="male">
+            </div>
+          </div>
+          
+          <!-- Height/Weight -->
+          <div class="form-group row">
+            <label for="inputHeight" class="col-sm-2 col-form-label">Height</label>
+            <div class="col-sm-4">
+              <div class="input-group">
+                <input type="number" class="form-control" id="inputHeight" placeholder="207">
+                <div class="input-group-addon">cm</div>
+              </div>
+            </div>
+            <label for="inputWeight" class="col-sm-2 col-form-label">Weight</label>
+            <div class="col-sm-4">
+              <div class="input-group">
+                <input type="number" class="form-control" id="inputWeight" placeholder="76">
+                <div class="input-group-addon">kg</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Street Cred / Notoriety / Public Awareness -->
+          <div class="form-group row">
+            <label for="inputStreetCred" class="col-sm-2 col-form-label">Street Cred</label>
+            <div class="col-sm-2">
+              <input type="number" class="form-control" id="inputStreetCred" placeholder="3">
+            </div>
+            <label for="inputNotoriety" class="col-sm-2 col-form-label">Notoriety</label>
+            <div class="col-sm-2">
+              <input type="number" class="form-control" id="inputNotoriety" placeholder="2">
+            </div>
+            <label for="inputPublicAwareness" class="col-sm-2 col-form-label">Public Awareness</label>
+            <div class="col-sm-2">
+              <input type="number" class="form-control" id="inputPublicAwareness" placeholder="0">
+            </div>
+          </div>
+
+          <!-- Money -->
+          <div class="form-group row">
+            <label for="inputMoney" class="col-sm-2 col-form-label">Money</label>
+            <div class="col-sm-10">
+              <div class="input-group">
+                <input type="decimal" class="form-control" id="inputMoney" placeholder="175.5">
+                <div class="input-group-addon">¥</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Karma -->
+          <div class="form-group row">
+            <label for="inputKarmaCurrent" class="col-sm-2 col-form-label">Current Karma</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control" id="inputKarmaCurrent" placeholder="12">
+            </div>
+            <label for="inputKarmaTotal" class="col-sm-2 col-form-label"> Total Karma</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control" id="inputKarmaTotal" placeholder="20">
+            </div>
+          </div>
+        </div>
+
+        <h2>Attributes</h2>
+        <div class="jumbotron" style="padding: 2rem 1rem;">
+          <!-- Body/Agility -->
+          <div class="form-group row">
+            <label for="inputBody" class="col-sm-2 col-form-label">Body</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control" id="inputBody" placeholder="2">
+            </div>
+            <label for="inputAgility" class="col-sm-2 col-form-label">Agility</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control" id="inputAgility" placeholder="4">
+            </div>
+          </div>
+
+          <!-- Reaction/Strength -->
+          <div class="form-group row">
+            <label for="inputReaction" class="col-sm-2 col-form-label">Reaction</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control" id="inputReaction" placeholder="3">
+            </div>
+            <label for="inputStrength" class="col-sm-2 col-form-label">Strength</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control" id="inputStrength" placeholder="4">
+            </div>
+          </div>
+          
+          <!-- Willpower/Logic -->
+          <div class="form-group row">
+            <label for="inputWillpower" class="col-sm-2 col-form-label">Willpower</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control" id="inputWillpower" placeholder="4">
+            </div>
+            <label for="inputLogic" class="col-sm-2 col-form-label">Logic</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control" id="inputLogic" placeholder="2">
+            </div>
+          </div>
+          
+          <!-- Intuition/Charisma -->
+          <div class="form-group row">
+            <label for="inputIntuition" class="col-sm-2 col-form-label">Intuition</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control" id="inputIntuition" placeholder="3">
+            </div>
+            <label for="inputCharisma" class="col-sm-2 col-form-label">Charisma</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control" id="inputCharisma" placeholder="6">
+            </div>
+          </div>
+          
+          <!-- Awakened/Magic -->
+          <div class="form-group row">
+            <label for="inputAwakened" class="col-sm-2 col-form-label">Awakened</label>
+            <div class="col-sm-4">
+              <select class="form-control">
+                <option>Mundane</option>
+                <option>Mage</option>
+                <option selected>Adept</option>
+                <option>Mystic Adept</option>
+              </select>
+            </div>
+            <label for="inputMagic" class="col-sm-2 col-form-label">Magic</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control" id="inputMagic" placeholder="6">
+            </div>
+          </div>
+
+          <!-- Resonance -->
+          <div class="form-group row">
+            <label for="inputResonance" class="col-sm-2 col-form-label">Resonance</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="inputResonance" placeholder="0">
+            </div>
+          </div>
+          
+          <!-- Essence/Edge -->
+          <div class="form-group row">
+            <label for="inputEssence" class="col-sm-2 col-form-label">Essence</label>
+            <div class="col-sm-4">
+              <input type="" class="form-control" id="inputEssence" placeholder="6">
+            </div>
+            <label for="inputEdge" class="col-sm-2 col-form-label">Edge</label>
+            <div class="col-sm-4">
+              <input type="" class="form-control" id="inputEdge" placeholder="2">
+            </div>
+          </div>
+
+          <!-- Initiative -->
+          <div class="form-group row">
+            <label for="inputInitiative" class="col-sm-2 col-form-label">Initiative</label>
+            <div class="col-sm-5">
+              <input type="number" class="form-control" id="inputInitiative" placeholder="6">
+            </div>
+            <div class="col-sm-5">
+              <div class="input-group">
+                <div class="input-group-addon">+</div>
+                <input type="number" class="form-control" id="inputInitiative" placeholder="1">
+                <div class="input-group-addon">d6</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Composure/Judge Intentions/Memory -->
+          <div class="form-group row">
+            <label for="inputComposure" class="col-sm-2 col-form-label">Composure</label>
+            <div class="col-sm-2">
+              <input type="number" class="form-control" id="inputComposure" placeholder="10">
+            </div>
+            <label for="inputJudgeIntentions" class="col-sm-2 col-form-label">Judge Intentions</label>
+            <div class="col-sm-2">
+              <input type="number" class="form-control" id="inputJudgeIntentions" placeholder="9">
+            </div>
+            <label for="inputMemory" class="col-sm-2 col-form-label">Memory</label>
+            <div class="col-sm-2">
+              <input type="number" class="form-control" id="inputJudgeMemory" placeholder="6">
+            </div>
+          </div>
+
+          <!-- Lift/Carry -->
+          <div class="form-group row">
+            <label for="inputLift" class="col-sm-2 col-form-label">Lift</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control" id="inputLift" placeholder="30">
+            </div>
+            <label for="inputCarry" class="col-sm-2 col-form-label">Carry</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control" id="inputCarry" placeholder="60">
+            </div>
+          </div>
+          
+          <!-- Movement -->
+          <div class="form-group row">
+            <label for="inputWalk" class="col-sm-2 col-form-label">Walk</label>
+            <div class="col-sm-2">
+              <input type="number" class="form-control" id="inputWalk" placeholder="8">
+            </div>
+            <label for="inputRun" class="col-sm-2 col-form-label">Run</label>
+            <div class="col-sm-2">
+              <input type="number" class="form-control" id="inputRun" placeholder="16">
+            </div>
+            <label for="inputSprint" class="col-sm-2 col-form-label">Sprint</label>
+            <div class="col-sm-2">
+              <div class="input-group">
+                <div class="input-group-addon">+</div>
+                <input type="number" class="form-control" id="inputSprint" placeholder="2">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2>Skills</h2>
+        <div class="jumbotron" style="padding: 2rem 1rem;">
+          <!-- Skill Controls -->
+          <div class="text-center" style="padding: 0rem 0rem 2rem 0rem;">
+            <a class="btn btn-lg btn-success disabled" href="#" role="button">+</a>
+            <a class="btn btn-lg btn-success disabled" href="#" role="button">-</a>
+          </div>
+          <!-- Skill Template -->
+          <div class="form-group row">
+            <div class="col-sm-2">
+              <select class="form-control">
+                <option selection>Action</option>
+                <option>Knowledge</option>
+              </select>
+            </div>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="inputSkillName" placeholder="Name">
+            </div>
+            <div class="col-sm-2">
+              <input type="number" class="form-control" id="inputSkillRating" placeholder="6">
+            </div>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="inputSkillSpecialization" placeholder="Specializations">
+            </div>
+          </div>
+          
+        </div>
+
+        <h2>Qualities</h2>
+        <div class="jumbotron" style="padding: 2rem 1rem;">
+          <!-- Quality Controls -->
+          <div class="text-center" style="padding: 0rem 0rem 2rem 0rem;">
+            <a class="btn btn-lg btn-success disabled" href="#" role="button">+</a>
+            <a class="btn btn-lg btn-success disabled" href="#" role="button">-</a>
+          </div>
+          <!-- Quality Template -->
+          <div class="form-group row">
+            <div class="col-sm-2">
+              <select class="form-control">
+                <option selection>Positive</option>
+                <option>Negative</option>
+              </select>
+            </div>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" id="inputQualityName" placeholder="Name">
+            </div>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" id="inputQualityNotes" placeholder="Description">
+            </div>
+          </div>
+          
+        </div>
+
+        <h2>Connections</h2>
+        <div class="jumbotron" style="padding: 2rem 1rem;">
+          <!-- Connection Controls -->
+          <div class="text-center" style="padding: 0rem 0rem 2rem 0rem;">
+            <a class="btn btn-lg btn-success disabled" href="#" role="button">+</a>
+            <a class="btn btn-lg btn-success disabled" href="#" role="button">-</a>
+          </div>
+          <!-- Connection Template -->
+          <div class="form-group row">
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="inputConnectionName" placeholder="Name">
+            </div>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="inputConnectionNotes" placeholder="Notes">
+            </div>
+            <label for="inputConnectionLoyality" class="col-sm-2 col-form-label">Loyality</label>
+            <div class="col-sm-1">
+              <input type="text" class="form-control" id="inputConnectionLoyality" placeholder="3">
+            </div>
+            <label for="inputConnectionConnection" class="col-sm-2 col-form-label">Connection</label>
+            <div class="col-sm-1">
+              <input type="text" class="form-control" id="inputConnectionConnection" placeholder="4">
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="text-center">
+          <p><a class="btn btn-lg btn-success disabled" href="#" role="button">Download</a></p>
+        </div>
+      </form>
+
+      <footer class="footer text-center">
+        <p>Made in Aachen, made with <i class="fa fa-heart-o" aria-hidden="True"></i>.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
